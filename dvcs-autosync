@@ -347,8 +347,8 @@ class FileChangeHandler():
             except subprocess.CalledProcessError as e:
                 if hasattr(e, 'output'):
                     printmsg('Command failed', "Command '%s' in '%s' failed.  Output:\n%s" % (" ".join (cmdarray), self.cwd, e.output), level=logging.WARNING)
-            else:
-                printmsg('Command failed', "Command '%s' in '%s' failed." % (" ".join (cmdarray), self.cwd), level=logging.WARNING)
+                else:
+                    printmsg('Command failed', "Command '%s' in '%s' failed." % (" ".join (cmdarray), self.cwd), level=logging.WARNING)
 
     def _post_action_steps(self, curpath = None):
         with lock:
