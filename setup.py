@@ -16,13 +16,13 @@ sc = open(SCRIPT)
 sclines = sc.readlines()
 for line in sclines:
     if not line.strip(): # skip empty or space padded lines
-	continue
+        continue
     if re.compile('^#').search(line) is not None: # skip commented lines
-	continue
+        continue
       
     kvp = line.strip().split('=')
     if kvp[0].strip() in keys:
-	options[kvp[0].strip(' \'')] = kvp[1].strip(' \'')
+        options[kvp[0].strip(' \'')] = kvp[1].strip(' \'')
 
 # These metadata fields are simply taken from the script
 VERSION = options['__version__']
